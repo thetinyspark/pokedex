@@ -1,5 +1,7 @@
 <div class="filters">
-    <!-- Ajouter une balise select avec autant d'options que de types de pokemons -->
+    <select name="" id="">
+        <option *ngFor="let type of types" value={{type}}>{{type}}</option>
+    </select>
 </div>
 <div class="catalog">
     <app-pokemon *ngFor="let current of list" [data]="current"></app-pokemon>
