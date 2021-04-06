@@ -13,6 +13,7 @@ export class CatalogResolver implements Resolve<{pokemons:Pokemon[], types:strin
   constructor(private service:CatalogService){}
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<{pokemons:Pokemon[], types:string[], defaultType:string}> {
+
     return this.service.getEverything();
   }
 }

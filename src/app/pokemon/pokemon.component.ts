@@ -11,6 +11,9 @@ export class PokemonComponent implements OnInit {
   @Input()
   public data:Pokemon|null = null;
 
+  @Input()
+  public preview:boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {

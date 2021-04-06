@@ -1,6 +1,13 @@
 <div *ngIf="data !== null">
     <h2>{{data.name}}</h2>
     <img src={{data.img}} alt={{data.name}} />
-    <p>{{data.type}}</p>
-    <p>{{data.desc}}</p>
+
+    <p>
+        <a routerLink="/pokemon/{{data.id}}" *ngIf="preview">Détails</a>
+    </p>
+
+    <div *ngIf="!preview">
+        <p>{{data.type}}</p>
+        <p>{{data.desc}}</p>
+    </div>
 </div>
