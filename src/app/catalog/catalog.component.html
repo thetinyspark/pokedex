@@ -1,8 +1,9 @@
 <div class="filters">
-    <select name="" id="">
+    <select [(ngModel)]="currentType">
         <option *ngFor="let type of types" value={{type}}>{{type}}</option>
     </select>
 </div>
 <div class="catalog">
-    <app-pokemon *ngFor="let current of list" [data]="current"></app-pokemon>
+    <app-pokemon    *ngFor="let current of list|byType:currentType" 
+                    [data]="current"></app-pokemon>
 </div>

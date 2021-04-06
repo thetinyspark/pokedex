@@ -37,9 +37,15 @@ export const POKEMON_LIST:Pokemon[] = [
     }
 ];
 
+
+export const POKEMON_TYPE_ALL:string = "All";
+
 export const POKEMON_TYPES:string[] = [
+    POKEMON_TYPE_ALL,
     "Electrique", 
     "Feu",
     "Eau",
     "Plante"
 ];
+
+
