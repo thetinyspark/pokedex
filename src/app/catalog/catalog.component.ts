@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Pokemon, POKEMON_LIST, POKEMON_TYPES, POKEMON_TYPE_ALL } from '../pokemon';
+import { ActivatedRoute, ParamMap } from '@angular/router';
+import { Pokemon } from '../pokemon';
 
 @Component({
   selector: 'app-catalog',
@@ -8,12 +9,30 @@ import { Pokemon, POKEMON_LIST, POKEMON_TYPES, POKEMON_TYPE_ALL } from '../pokem
 })
 export class CatalogComponent implements OnInit {
 
-  public types:string[] = POKEMON_TYPES;
-  public list:Pokemon[] = POKEMON_LIST;
-  public currentType:string = POKEMON_TYPE_ALL;
-  constructor() { }
+  public types:string[] = [];
+  public list:Pokemon[] = [];
+  public currentType:string = "";
+  public currentDesc:string = "";
+  public currentName:string = "";
+
+  constructor(private route:ActivatedRoute) { } 
 
   ngOnInit(): void {
+
+    this.route.paramMap.subscribe( 
+      (map:ParamMap)=>{
+        console.log(map.get("id"));
+      }
+    )
+
+    this.route.data.subscribe( 
+      (data:any)=>{
+        this.list = data.catalogData.pokemons;        
+        this.types = data.catalogData.types;        
+        this.currentType = data.catalogData.defaultType;   
+      }
+    );
+
   }
 
 }

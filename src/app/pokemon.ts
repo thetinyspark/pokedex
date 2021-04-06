@@ -18,25 +18,24 @@ export const POKEMON_LIST:Pokemon[] = [
         id: 2, 
         name: "Salamèche", 
         type: "Feu", 
-        desc: "Le pokémon le plus mignon du monde", 
+        desc: "Le pokémon le plus brûlant du monde", 
         img: "/assets/img/salameche.jpg"
     }, 
     {
         id: 3, 
         name: "Carapuce", 
         type: "Eau", 
-        desc: "Le pokémon le plus mignon du monde", 
+        desc: "Le pokémon le plus mouillé du monde", 
         img: "/assets/img/carapuce.jpg"
     }, 
     {
         id: 4, 
         name: "Bulbizarre", 
         type: "Plante", 
-        desc: "Le pokémon le plus mignon du monde", 
+        desc: "Le pokémon le plus vert du monde", 
         img: "/assets/img/bulbizarre.jpg"
     }
 ];
-
 
 export const POKEMON_TYPE_ALL:string = "All";
 

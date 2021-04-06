@@ -2,8 +2,16 @@
     <select [(ngModel)]="currentType">
         <option *ngFor="let type of types" value={{type}}>{{type}}</option>
     </select>
+    <div>
+        <label for="">Description:</label>
+        <input type="text" [(ngModel)]="currentDesc" />
+    </div>
+    <div>
+        <label for="">Nom:</label>
+        <input type="text" [(ngModel)]="currentName" />
+    </div>
 </div>
 <div class="catalog">
-    <app-pokemon    *ngFor="let current of list|byType:currentType" 
+    <app-pokemon    *ngFor="let current of list|byType:currentType|byName:currentName|byDesc:currentDesc|slice:0:100" 
                     [data]="current"></app-pokemon>
 </div>

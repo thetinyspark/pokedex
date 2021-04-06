@@ -1,0 +1,37 @@
+[
+    {
+        "id": 1, 
+        "name": "Pikachu", 
+        "type": "Electrique", 
+        "desc": "Le pokémon le plus mignon du monde", 
+        "img": "/assets/img/pikachu.jpg"
+    }, 
+    {
+        "id": 2, 
+        "name": "Salamèche", 
+        "type": "Feu", 
+        "desc": "Le pokémon le plus brûlant du monde", 
+        "img": "/assets/img/salameche.jpg"
+    }, 
+    {
+        "id": 3, 
+        "name": "Carapuce", 
+        "type": "Eau", 
+        "desc": "Le pokémon le plus mouillé du monde", 
+        "img": "/assets/img/carapuce.jpg"
+    }, 
+    {
+        "id": 4, 
+        "name": "Bulbizarre", 
+        "type": "Plante", 
+        "desc": "Le pokémon le plus vert du monde", 
+        "img": "/assets/img/bulbizarre.jpg"
+    },
+    {
+        "id": 5, 
+        "name": "Psykokwak", 
+        "type": "Psy", 
+        "desc": "Le pokémon le plus cérébral du monde", 
+        "img": "/assets/img/psykokwak.jpg"
+    }
+]

@@ -3,7 +3,13 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false, 
+  api: {
+    endpoints: {
+      pokemons: "/assets/data/pokemons.json", 
+      types: "/assets/data/pokemon-types.json"
+    }
+  }
 };
 
 /*
