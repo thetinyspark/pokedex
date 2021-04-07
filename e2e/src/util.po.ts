@@ -1,4 +1,4 @@
-import { browser, by, element } from 'protractor';
+import { browser, by, element, ElementFinder } from 'protractor';
 
 export class Util {
 
@@ -9,6 +9,15 @@ export class Util {
   public async currentUrlContains(search:string):Promise<boolean>{
     const url:string = await browser.getCurrentUrl(); 
     return url.includes(search);
+  }
+
+  public async getRandomElementByCss(selector:string):Promise<any>{
+      const all = element.all(by.css(selector)); 
+      return all.count().then(
+        (max) => {
+          return all.get( Math.floor( Math.random() * max ))
+        }
+      );
   }
 
   public async navigateToHome(): Promise<unknown> {
