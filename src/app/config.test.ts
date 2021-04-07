@@ -49,10 +49,12 @@ export const TEST_CONFIG_MODULE: any = {
             ]
         ),
         FormsModule
-    ]
+    ], 
+    providers:[]
 };
 
-export async function initTestModule() {
+export async function initTestModule(providers:any[] = []) {
+    TEST_CONFIG_MODULE.providers = providers;
     await TestBed.configureTestingModule(TEST_CONFIG_MODULE).compileComponents();
     const service = TestBed.inject(CatalogService);
     spyOn(service, "getAll").and.returnValue(of(POKEMON_LIST));

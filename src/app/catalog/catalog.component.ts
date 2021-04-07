@@ -19,12 +19,6 @@ export class CatalogComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.route.paramMap.subscribe( 
-      (map:ParamMap)=>{
-        console.log(map.get("id"));
-      }
-    )
-
     this.route.data.subscribe( 
       (data:any)=>{
         this.list = data.catalogData.pokemons;        
