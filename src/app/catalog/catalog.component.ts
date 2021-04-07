@@ -30,6 +30,9 @@ export class CatalogComponent implements OnInit {
         this.list = data.catalogData.pokemons;        
         this.types = data.catalogData.types;        
         this.currentType = data.catalogData.defaultType;   
+      }, 
+      (reason:any) => {
+        console.log(reason);
       }
     );
 
