@@ -29,12 +29,10 @@ describe('workspace-project App', () => {
   fit(
     'should filter pokemons by type',
     async () => {
+      const type:string = "Feu";
       await page.navigateToCatalog();
       await page.clickOnElementByCss("select");
-
-      const type:string = await page.getElementTextByCssContainingText("option", "Feu");
-      await page.clickOnElementByCssContainingText("option", "Feu");
-      await page.pause(2000);
+      await page.clickOnElementByCssContainingText("option", type);
 
       const pokemonTitle:string = await page.getElementTextByCss("app-pokemon h2");
       expect(pokemonTitle).toContain(type);
