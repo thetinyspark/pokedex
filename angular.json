@@ -4,6 +4,13 @@
   "newProjectRoot": "projects",
   "projects": {
     "pokedex": {
+      "i18n": {
+        "sourceLocale": "en-US", 
+        "locales": {
+          "fr": "src/locales/messages.fr.xlf",
+          "en": "src/locales/messages.en.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:application": {
@@ -23,6 +30,7 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
+            "localize": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
