@@ -1,5 +1,5 @@
 import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnChanges, OnDestroy, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { BerryService } from '../berry.service';
 
 @Component({
@@ -18,7 +18,7 @@ export class BerryChartComponent implements OnInit,
 
 
   public berryAvgPrice:number = 0;
-  private values:number[] = [];
+  private sub:Subscription|null = null;
 
   constructor( private cd:ChangeDetectorRef, private berryService:BerryService) { }
 
@@ -27,29 +27,24 @@ export class BerryChartComponent implements OnInit,
   ngOnInit(): void {
     console.log("init");
 
-    this.berryService.getGoldenBerryPrice().subscribe( 
-      (value:number) => {
-        this.values.push(value);
-
-        if( this.values.length % 1000 === 0 ){
-          let avg:number = 0; 
-          for( let i:number = 0; i < this.values.length; i++ ){
-            avg += this.values[i];
-          }
-
-          avg /= 1000;
-          this.values = [];
-          this.berryAvgPrice = avg;
-          this.cd.markForCheck();
-        }
-
+    this.sub = this.berryService.getGoldenAvgBerryPrice().subscribe( 
+      (avg) => {
+        console.log("coucou");
+        
+        this.berryAvgPrice = avg;
+        this.cd.markForCheck();
       }
-    )
+    );
   }
   ngAfterContentInit(){console.log("content init");}
   ngAfterContentChecked(){console.log("content checked");}
   ngAfterViewInit(){console.log("view init");}
   ngAfterViewChecked(){console.log("view checked");}
-  ngOnDestroy(){console.log("destroy");}
+
+  ngOnDestroy(){
+    if( this.sub !== null ){
+      this.sub.unsubscribe();
+    }
+  }
 
 }
