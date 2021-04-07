@@ -13,6 +13,7 @@ import { CatalogResolver } from './catalog.resolver';
 import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.component';
 import { PokemonDetailResolver } from './pokemon-detail.resolver';
 import { PokemonExistsGuard } from './pokemon-exists.guard';
+import { BerryChartComponent } from './berry-chart/berry-chart.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PokemonExistsGuard } from './pokemon-exists.guard';
     ByTypePipe,
     ByNamePipe,
     ByDescPipe,
-    PokemonDetailComponent
+    PokemonDetailComponent,
+    BerryChartComponent
   ],
   imports: [
     RouterModule.forRoot( 
@@ -41,6 +43,10 @@ import { PokemonExistsGuard } from './pokemon-exists.guard';
             pokemonData: PokemonDetailResolver
           }, 
           canActivate: [PokemonExistsGuard]
+        },
+        {
+          path: "berries", 
+          component: BerryChartComponent
         }
       ]
     ),
