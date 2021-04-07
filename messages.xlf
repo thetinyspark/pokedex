@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="6931423420336553371" datatype="html">
+        <source>{VAR_PLURAL, plural, zero {de zero en héros} one {tu es l&apos;unique} two {it takes two} few {c&apos;est un petit peu} many {ça fait beaucoup là quand même} other {quantité autre}}</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4,12</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="2380939390102386148" datatype="html">
+        <source> <x id="ICU" equiv-text="{
+        count, plural, 
+        zero {de zero en héros} 
+        one {tu es l&apos;unique} 
+        two {it takes two} 
+        few {c&apos;est un petit peu}
+        many {ça fait beaucoup là quand même}
+        other {quantité autre}
+    }
+"/>
+</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">4,13</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="755912909243926781" datatype="html">
+        <source>Hello world !</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+        <note priority="1" from="description">Just say &apos;hi&apos;</note>
+        <note priority="1" from="meaning">First message</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

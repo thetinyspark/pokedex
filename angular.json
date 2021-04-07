@@ -48,6 +48,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+              "localize": ["fr"],
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,

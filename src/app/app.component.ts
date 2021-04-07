@@ -9,4 +9,5 @@ import { Component } from '@angular/core';
 )
 export class AppComponent {
   public title: string = 'pokedex';
+  public count:number = 2;
 }
