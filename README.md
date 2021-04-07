@@ -1,9 +1,11 @@
 # Traduire des choses 
 
-- Rajouter un test pour le catalogService permettant de tester la méthode  
-getDefaultType
+- Tester le scénario suivant: 
 
-BONUS: 
-
-Tester getEverything, getAll et getTypes
+    - Je pars de la home
+    - Je clique sur la catalogue 
+    - Je clique sur un pokemon au hasard , je conserve son nom dans une variable.
+    - J'atterris sur la fiche détaillée du pokemon
+    - Je vérifie que l'url de la fiche détaillée a la bonne forme "pokemon/:id"
+    - Je vérifie que le nom du pokemon est le bon (par rapport à là où j'ai cliqué sur le catalogue)
 
