@@ -28,11 +28,12 @@ import { SocketIoModule } from 'ngx-socket-io';
     BerryChartComponent
   ],
   imports: [
+    /*
     SocketIoModule.forRoot(
       {
-        url:"http://localhost:3000", options: {}
+        url:"ws://localhost:3000", options: {withCredentials:false}
       }
-    ),
+    ),*/
     RouterModule.forRoot( 
       [
         {

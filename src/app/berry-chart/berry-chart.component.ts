@@ -27,6 +27,7 @@ export class BerryChartComponent implements OnInit,
   ngOnInit(): void {
     console.log("init");
 
+    /*
     this.sub = this.berryService.getGoldenAvgBerryPrice().subscribe( 
       (avg) => {
         console.log("coucou");
@@ -35,6 +36,7 @@ export class BerryChartComponent implements OnInit,
         this.cd.markForCheck();
       }
     );
+    */
   }
   ngAfterContentInit(){console.log("content init");}
   ngAfterContentChecked(){console.log("content checked");}
