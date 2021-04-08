@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { CatalogService } from '../catalog.service';
 import { Pokemon } from '../pokemon';
 import { IsNameTakenValidator } from './validators/IsNameTakenValidator';
 import { VowelValidator } from './validators/VowelValidator';
@@ -49,7 +48,17 @@ export class ContactComponent implements OnInit {
     event.preventDefault();
     event.stopPropagation();
     event.stopImmediatePropagation();
-    alert(this.pokemonForm?.valid);
+
+    Object.keys(new Pokemon()).forEach( 
+      (key:string) => {
+        const error:any|null = this.pokemonForm?.get(key)?.errors || null;
+        if( error !== null ){
+          console.log(key + " : " + JSON.stringify(error));
+        }
+      }
+    );
+
+
     return false;
   }
 
