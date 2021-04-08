@@ -1,5 +1,5 @@
 import { Directive, forwardRef } from "@angular/core";
-import { AbstractControl, NG_VALIDATORS } from "@angular/forms";
+import { AbstractControl, NG_VALIDATORS, ValidationErrors } from "@angular/forms";
 @Directive({
     selector: '[vowel][ngModel],[vowel][formControl]',
     providers: [
@@ -15,7 +15,7 @@ export class VowelValidator {
     public static instance: VowelValidator = new VowelValidator();
 
     constructor() { }
-    validate(control: AbstractControl) {
+    validate(control: AbstractControl):ValidationErrors|null {
 
         const str: string = control.value as string;
         const vowels: string[] = ["a", "e", "i", "o", "u", "y"];

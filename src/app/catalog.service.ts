@@ -12,6 +12,16 @@ export class CatalogService {
 
   constructor(private service:HttpClient) {}
 
+  public getPokemonByName(name:string):Observable<Pokemon|null>{
+    return this.getAll().pipe( 
+      map( 
+        (pokemons:Pokemon[]) => {
+          return pokemons.find( pok => pok.name === name ) || null;
+        }
+      )
+    );
+  }
+
   public getById(id:number):Observable<Pokemon|null>{
     return this.getAll().pipe( 
       map( 
