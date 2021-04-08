@@ -37,6 +37,16 @@ import { SocketIoModule } from 'ngx-socket-io';
     RouterModule.forRoot( 
       [
         {
+          path: "contact", 
+          loadChildren: () => {
+            return import("./contact/contact.module").then( 
+              (mod) => {
+                return mod.ContactModule;
+              }
+            )
+          }
+        },
+        {
           path: "catalog", 
           component: CatalogComponent, 
           resolve: {

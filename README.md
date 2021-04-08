@@ -1,11 +1,11 @@
-# Traduire des choses 
+# Créer un validator pour le nom du pokemon  
 
-- Tester le scénario suivant: 
+- Créer un validator asynchrone, qui permet de vérifier si le nom du pokemon 
+dans le champ, est déjà pris ou non. 
 
-    - Je pars de la home
-    - Je clique sur la catalogue 
-    - Je clique sur un pokemon au hasard , je conserve son nom dans une variable.
-    - J'atterris sur la fiche détaillée du pokemon
-    - Je vérifie que l'url de la fiche détaillée a la bonne forme "pokemon/:id"
-    - Je vérifie que le nom du pokemon est le bon (par rapport à là où j'ai cliqué sur le catalogue)
+- Créer une méthode sur le catalog service getPokemonByName 
+
+ATTENTION: Les validators ne peuvent pas se faire injecter des service par le biais 
+de leur constructeur, en tout cas, Angular ne s'en occupera pas automatiquement. 
+Vous devrez donc passer l'instance de catalogservice à votre validator. 
 
