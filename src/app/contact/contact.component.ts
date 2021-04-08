@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Pokemon } from '../pokemon';
+import { HaddockValidator } from './validators/HaddockValidator';
 import { IsNameTakenValidator } from './validators/IsNameTakenValidator';
 import { VowelValidator } from './validators/VowelValidator';
 
@@ -35,7 +36,7 @@ export class ContactComponent implements OnInit {
     config.desc = [
       "",
       {
-        validators: [Validators.required, VowelValidator.instance], 
+        validators: [Validators.required, VowelValidator.instance, new HaddockValidator()], 
         asyncValidators:[]
       }
     ];

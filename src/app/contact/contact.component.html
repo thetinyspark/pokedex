@@ -1,20 +1,25 @@
-<form   *ngIf="pokemonForm !== null" 
-        [formGroup]="pokemonForm" 
-        (ngSubmit)="onSubmit($event)" >
+<form *ngIf="pokemonForm !== null" [formGroup]="pokemonForm" (ngSubmit)="onSubmit($event)">
     <label for="">Nom</label>
     <input type="text" formControlName="name" />
     <br />
 
     <p *ngIf="pokemonForm.controls.name?.errors?.taken">Ce nom est déjà pris.</p>
-    
+
     <label for="">Type</label>
     <input type="text" formControlName="type" />
     <br />
-    
+
     <label for="">Description</label>
     <input type="text" formControlName="desc" />
+    <div *ngIf="pokemonForm.controls.desc?.errors?.insults">
+        <p>Liste des insultes trouvées:</p>
+        <ul>
+            <li *ngFor="let word of pokemonForm.controls.desc?.errors?.insults">{{word}}</li>
+        </ul>
+    </div>
+
     <br />
-    
+
     <label for="">Image</label>
     <input type="text" formControlName="img" />
     <br />

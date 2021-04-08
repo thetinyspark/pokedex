@@ -7,7 +7,7 @@ import { Pokemon } from "src/app/pokemon";
 
 
 @Directive({
-    selector: '[vowel][ngModel],[vowel][formControl]',
+    selector: '[taken][ngModel],[taken][formControl]',
     providers: [
         {
             provide: NG_ASYNC_VALIDATORS,

@@ -1,6 +1,9 @@
-- Créer des règles CSS permettant d'offrir un retour utilisateur
-explicite concernant l'état du champ. 
+- Créer un validator (synchrone) qui vérifie si le champ contient les insultes suivantes: 
 
-- Code couleur vert: Champ valide 
-- Code couleur rouge: Champ invalide 
-- Code couleur bleu pâle: Champ jamais édité
+"bachi bouzouk"
+"anthropopithèque", 
+"marin d'eau douce", 
+"boit sans soif"
+
+- Si le validator trouve des insultes, vous devez lister l'ensemble des insultes 
+interdites à l'utilisateur. 
