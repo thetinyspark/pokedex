@@ -14,18 +14,16 @@ export class ContactComponent implements OnInit {
 
   public pokemonForm: FormGroup | null = null;
 
-  constructor(private builder: FormBuilder, private service:CatalogService) { }
+  constructor(private builder: FormBuilder, private nameValidator:IsNameTakenValidator) { }
 
   ngOnInit(): void {
-
-    const nameV:IsNameTakenValidator = new IsNameTakenValidator(this.service);
 
     let config: any = Object.keys(new Pokemon());
     config.name = [
       "", 
       {
         validators:[Validators.required], 
-        asyncValidators:[nameV]
+        asyncValidators:[this.nameValidator]
       }
     ];
     config.type = [
@@ -42,7 +40,7 @@ export class ContactComponent implements OnInit {
         asyncValidators:[]
       }
     ];
-    
+
     config.img = "";
     this.pokemonForm = this.builder.group(config);
   }

@@ -1,9 +1,11 @@
-import { Directive, forwardRef } from "@angular/core";
+import { Directive, forwardRef, Injectable } from "@angular/core";
 import { AbstractControl, NG_ASYNC_VALIDATORS, ValidationErrors } from "@angular/forms";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { CatalogService } from "src/app/catalog.service";
 import { Pokemon } from "src/app/pokemon";
+
+
 @Directive({
     selector: '[vowel][ngModel],[vowel][formControl]',
     providers: [
@@ -14,6 +16,7 @@ import { Pokemon } from "src/app/pokemon";
         }
     ]
 })
+@Injectable()
 export class IsNameTakenValidator {
 
     constructor( private service:CatalogService ) { }
