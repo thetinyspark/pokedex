@@ -14,6 +14,7 @@ import { PokemonDetailComponent } from './pokemon-detail/pokemon-detail.componen
 import { PokemonDetailResolver } from './pokemon-detail.resolver';
 import { PokemonExistsGuard } from './pokemon-exists.guard';
 import { BerryChartComponent } from './berry-chart/berry-chart.component';
+import { SocketIoModule } from 'ngx-socket-io';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,11 @@ import { BerryChartComponent } from './berry-chart/berry-chart.component';
     BerryChartComponent
   ],
   imports: [
+    SocketIoModule.forRoot(
+      {
+        url:"http://localhost:3000", options: {}
+      }
+    ),
     RouterModule.forRoot( 
       [
         {
